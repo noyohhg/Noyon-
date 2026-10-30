@@ -28,10 +28,6 @@ jobs:
       - uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: '8.9'
-      - name: Download developer icon
-        run: |
-          mkdir -p app/src/main/res/drawable-nodpi
-          curl -L --fail 'https://i.ibb.co/My6Mn3SL/1000015189.png' -o app/src/main/res/drawable-nodpi/developer_icon.png
       - name: Build debug APK
         run: gradle assembleDebug
       - uses: actions/upload-artifact@v4
